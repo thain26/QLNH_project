@@ -84,7 +84,9 @@
             this.ClientSize = new System.Drawing.Size(882, 553);
             this.Controls.Add(this.pnShow);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "fNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

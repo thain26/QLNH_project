@@ -35,10 +35,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btThanhToan = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rbTienMat = new System.Windows.Forms.RadioButton();
-            this.rbInternetBanking = new System.Windows.Forms.RadioButton();
-            this.rbTheTinDung = new System.Windows.Forms.RadioButton();
             this.lbTongTien = new System.Windows.Forms.Label();
             this.tbTongTien = new System.Windows.Forms.TextBox();
             this.cbDanhMuc = new System.Windows.Forms.ComboBox();
@@ -112,52 +108,6 @@
             this.btThanhToan.Text = "Thanh toán";
             this.btThanhToan.UseVisualStyleBackColor = true;
             this.btThanhToan.Click += new System.EventHandler(this.btThanhToan_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(10, 417);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 19);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Phương thức thanh toán:";
-            // 
-            // rbTienMat
-            // 
-            this.rbTienMat.AutoSize = true;
-            this.rbTienMat.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rbTienMat.Location = new System.Drawing.Point(13, 439);
-            this.rbTienMat.Name = "rbTienMat";
-            this.rbTienMat.Size = new System.Drawing.Size(78, 20);
-            this.rbTienMat.TabIndex = 4;
-            this.rbTienMat.TabStop = true;
-            this.rbTienMat.Text = "Tiền mặt";
-            this.rbTienMat.UseVisualStyleBackColor = true;
-            // 
-            // rbInternetBanking
-            // 
-            this.rbInternetBanking.AutoSize = true;
-            this.rbInternetBanking.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rbInternetBanking.Location = new System.Drawing.Point(167, 439);
-            this.rbInternetBanking.Name = "rbInternetBanking";
-            this.rbInternetBanking.Size = new System.Drawing.Size(122, 20);
-            this.rbInternetBanking.TabIndex = 5;
-            this.rbInternetBanking.TabStop = true;
-            this.rbInternetBanking.Text = "Internet Banking";
-            this.rbInternetBanking.UseVisualStyleBackColor = true;
-            // 
-            // rbTheTinDung
-            // 
-            this.rbTheTinDung.AutoSize = true;
-            this.rbTheTinDung.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rbTheTinDung.Location = new System.Drawing.Point(337, 439);
-            this.rbTheTinDung.Name = "rbTheTinDung";
-            this.rbTheTinDung.Size = new System.Drawing.Size(99, 20);
-            this.rbTheTinDung.TabIndex = 6;
-            this.rbTheTinDung.TabStop = true;
-            this.rbTheTinDung.Text = "Thẻ tín dụng";
-            this.rbTheTinDung.UseVisualStyleBackColor = true;
             // 
             // lbTongTien
             // 
@@ -288,19 +238,19 @@
             // 
             // fGioHang
             // 
+            this.AcceptButton = this.btThemMon;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(882, 553);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btThanhToan);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.rbTienMat);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.rbInternetBanking);
             this.Controls.Add(this.tbTongTien);
-            this.Controls.Add(this.rbTheTinDung);
             this.Controls.Add(this.lbTongTien);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "fGioHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Giỏ hàng";
@@ -322,10 +272,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btThanhToan;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rbTienMat;
-        private System.Windows.Forms.RadioButton rbInternetBanking;
-        private System.Windows.Forms.RadioButton rbTheTinDung;
         private System.Windows.Forms.Label lbTongTien;
         private System.Windows.Forms.TextBox tbTongTien;
         private System.Windows.Forms.ComboBox cbDanhMuc;

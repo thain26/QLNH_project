@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace Quanlynhahang
 {
@@ -19,69 +20,80 @@ namespace Quanlynhahang
             InitializeComponent();
         }
 
+        SqlConnection connection;
+        SqlCommand command;
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        DataTable dataTable = new DataTable();
+        string str = @"Data Source=LAPTOPCUATAO;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
+
+        void Loaddata()
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "select * from NhanVien";
+            adapter.SelectCommand = command;
+            dataTable.Clear();
+            adapter.Fill(dataTable);
+            dgvNhanVien.DataSource = dataTable;
+        }
 
         private void ucQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            /*
-            string query = "select * from NhanVien";
-
-            dgvNhanVien.DataSource = DataProvider.Instance.ExecuteQuery(query);
-            */
+            connection = new SqlConnection(str);
+            connection.Open();
+            Loaddata();
+            dgvNhanVien.AutoResizeColumns();
 
         }
 
         private void btThem_Click(object sender, EventArgs e)
         {
-            dgvNhanVien.Rows.Add(tbMa.Text, tbHoTen.Text,dtpNgaySinh.Text,cbGioiTinh.Text, tbCCCD.Text, tbSDT.Text);
-
-            tbHoTen.Clear();
-            tbCCCD.Clear();
-            tbSDT.Clear();
-            tbCCCD.Clear();
-            
-            /*
-            string query = "insert into NhanVien( CCCD, ten, ngaySinh, gioiTinh, SDT) values ( N'" + tbCCCD.Text + "', N'" + tbHoTen.Text + "', '" + dtpNgaySinh.Value + "', N'" + cbGioiTinh.Text + "', N'" + tbSDT.Text + "')";
-
-            DataProvider.Instance.ExecuteQuery(query);
-
-            ucQuanLyNhanVien_Load(sender, e);
-            */
+            command = connection.CreateCommand();
+            command.CommandText = "insert into NhanVien values('" + tbMa.Text + "','" + tbCCCD.Text + "',N'" + tbHoTen.Text + "',N'" + dtpNgaySinh.Text + "',N'" + cbGioiTinh.Text + "','" + tbSDT.Text + "')";
+            command.ExecuteNonQuery();
+            Loaddata();
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (dgvNhanVien.SelectedRows.Count > 0)
-            {
-                dgvNhanVien.Rows.RemoveAt(dgvNhanVien.SelectedCells[0].RowIndex);
-            }
-            /*
-            string query = "delete from NhanVien where Ma = " + Convert.ToString(dgvNhanVien.CurrentRow.Cells[0].Value);
-
-            DataProvider.Instance.ExecuteQuery(query);
-
-            ucQuanLyNhanVien_Load(sender, e);
-            */
+            command = connection.CreateCommand();
+            command.CommandText = "delete from NhanVien where Ma='" + tbMa.Text + "'";
+            command.ExecuteNonQuery();
+            Loaddata();
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            tbMa.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells[0].Value);
-            tbCCCD.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells[3].Value);
-            tbHoTen.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells[1].Value);
-            tbSDT.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells[4].Value);
-            //cbGioiTinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells[4].Value);
-            dtpNgaySinh.Text = Convert.ToString(dgvNhanVien.CurrentRow.Cells[2].Value);
-            
+
+            tbMa.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
+            tbCCCD.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
+            tbHoTen.Text = dgvNhanVien.CurrentRow.Cells[2].Value.ToString();
+            dtpNgaySinh.Text = dgvNhanVien.CurrentRow.Cells[3].Value.ToString();
+            cbGioiTinh.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
+            tbSDT.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
+
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
-            dgvNhanVien.CurrentRow.Cells[0].Value = tbMa.Text;
-            dgvNhanVien.CurrentRow.Cells[3].Value = tbCCCD.Text;
-            dgvNhanVien.CurrentRow.Cells[1].Value = tbHoTen.Text;
-            dgvNhanVien.CurrentRow.Cells[4].Value = tbSDT.Text;
-            dgvNhanVien.CurrentRow.Cells[2].Value = dtpNgaySinh.Value;
+            command = connection.CreateCommand();
+            command.CommandText = "update NhanVien set Ma=N'" + tbMa.Text + "',Ten=N'" + tbHoTen.Text + "',NgaySinh='" + dtpNgaySinh.Text + "',GioiTinh=N'" + cbGioiTinh.Text + "',SDT='" + tbSDT.Text + "'where Ma='" + tbMa.Text + "'";
+            command.ExecuteNonQuery();
+            Loaddata();
+        }
+
+        private void btKhoiTao_Click(object sender, EventArgs e)
+        {
+            tbMa.Text = " ";
+            tbHoTen.Text = " ";
+            tbCCCD.Text = " ";
+            tbSDT.Text = " ";
+            cbGioiTinh.Text = " ";
+            dtpNgaySinh.Text = "1/1/2001";
+        }
+
+        private void gbTim_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

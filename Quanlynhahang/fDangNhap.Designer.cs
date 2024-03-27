@@ -126,11 +126,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Forte", 25.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(70, 173);
+            this.label4.Location = new System.Drawing.Point(28, 186);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 47);
+            this.label4.Size = new System.Drawing.Size(259, 47);
             this.label4.TabIndex = 5;
-            this.label4.Text = "4 Con Sâu";
+            this.label4.Text = "4 Thành Viên";
             // 
             // panel2
             // 
@@ -179,6 +179,8 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(804, 449);
+            this.MinimumSize = new System.Drawing.Size(804, 449);
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";

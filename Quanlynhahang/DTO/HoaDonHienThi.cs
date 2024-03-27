@@ -36,7 +36,7 @@ namespace Quanlynhahang.DTO
             _foodName = row["Ten"].ToString();
             _amount = (int)row["Soluong"];
             _price = (float)Convert.ToDouble((row["Gia"].ToString()));
-            _totalPrice = (float)Convert.ToDouble((row["Gia"].ToString()));
+            _totalPrice = Price * Amount;
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Quanlynhahang
         private void btDangNhap_Click(object sender, EventArgs e)
         {
             string taiKhoan = tbTaiKhoan.Text, matKhau = tbMatKhau.Text;
-            int loai = -1;
+            int loai = 3;
 
             if (rbQuanLy.Checked == true)
             {

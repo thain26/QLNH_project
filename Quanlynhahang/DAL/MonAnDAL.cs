@@ -50,7 +50,7 @@ namespace Quanlynhahang.DAL
 
         public void RemoveMonAn(string tenMon)
         {
-            string query = "delete MonAn where Ten = " + tenMon;
+            string query = "delete MonAn where Ten = N'" + tenMon + "'";
             DataProvider.Instance.ExecuteQuery(query);
         }
 

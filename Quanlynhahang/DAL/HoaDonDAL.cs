@@ -52,9 +52,11 @@ namespace Quanlynhahang.DAL
         public void ThanhToan(int idHoaDon, float tongTien)
         {
             string query = "update HoaDon set NgayRa = getdate(), TongTien = " + tongTien + ", TrangThai = 1 where Ma = " + idHoaDon;
-            DataProvider.Instance.ExecuteNonQuery(query);
+            DataProvider.Instance.ExecuteNonQuery(
+                query);
         }
 
+        // truy xuất danh sách hóa đơn
         public DataTable GetListHoaDon(DateTime ngayVao, DateTime ngayRa)
         {
             string query = "select Ma as N'Mã hóa đơn', MaBan as N'Số bàn', NgayVao as N'Ngày vào', NgayRa as N'Ngày ra', TongTien as N'Tổng tiền' from HoaDon where NgayVao >= '" + ngayVao + "' and NgayRa <= '" + ngayRa + "'";

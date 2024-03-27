@@ -40,31 +40,42 @@ namespace Quanlynhahang
 
         private void btThem_Click(object sender, EventArgs e)
         {
+            //lấy dữ liệu của textbox thêm món ăn
             string tenMonAn = tbTenMonAn.Text;
 
             DanhMuc selected = cbDanhMuc.SelectedItem as DanhMuc;
             int idDanhMuc = selected.Id;
 
             float gia = (float)(Convert.ToDouble(tbGia.Text));
+
+            //thực hiện thêm món ăn vào csdl
             MonAnDAL.Instance.AddMonAn(tenMonAn, idDanhMuc, gia);
+
             LoadListMonAn();
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
             int idDanhMuc = DanhMucDAL.Instance.GetIdDanhMuc(cbDanhMuc.Text);
+
             string newTenMon = tbTenMonAn.Text;
+
             string tenMon = dgvMonAn.CurrentRow.Cells[0].Value.ToString();
+
             float gia = (float)Convert.ToDouble(tbGia.Text);
 
+            //thực hiện sửa thông tin món ăn thông qua tên
             MonAnDAL.Instance.UpdateMonAn(newTenMon, tenMon, idDanhMuc, gia);
+
             LoadListMonAn();
         }
 
         private void btXoa_Click(object sender, EventArgs e)
         {
             string tenMon = tbTenMonAn.Text;
+
             MonAnDAL.Instance.RemoveMonAn(tenMon);
+
             LoadListMonAn();
         }
 

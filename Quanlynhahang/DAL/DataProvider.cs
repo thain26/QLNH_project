@@ -14,7 +14,7 @@ namespace Quanlynhahang.DAL
 
         private string connectionString = @"Data Source=LAPTOPCUATAO;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
 
-        // tạo mô hình singleton
+        // tạo mô hình singleton, chỉ có 1 thể hiện duy nhất của lớp được tạo
         private static DataProvider instance;
 
         public static DataProvider Instance 
