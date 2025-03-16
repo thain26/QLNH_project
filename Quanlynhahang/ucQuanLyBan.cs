@@ -14,6 +14,8 @@ namespace Quanlynhahang
 {
     public partial class ucQuanLyBan : UserControl
     {
+        Button datban = new Button() { Width = BanDAL.Width, Height = BanDAL.Height };
+        
         public ucQuanLyBan()
         {
             InitializeComponent();
@@ -23,6 +25,11 @@ namespace Quanlynhahang
         {
 
             flpBan.Controls.Clear();
+
+            datban.Text = "Đặt bàn";
+            datban.Click += bt_Click;
+            datban.BackColor = Color.MistyRose;
+            flpBan.Controls.Add(datban);
 
             List<Ban> dsBan = BanDAL.Instance.LoadTableList();
 

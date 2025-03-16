@@ -32,6 +32,7 @@ namespace Quanlynhahang.DAL
 
             SqlCommand cmd = new SqlCommand(query, connection);
 
+
             if (parameter != null)
             {
                 string[] lisPara = query.Split(' ');

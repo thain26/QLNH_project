@@ -78,7 +78,7 @@
             this.btDoanhThu.Name = "btDoanhThu";
             this.btDoanhThu.Size = new System.Drawing.Size(121, 102);
             this.btDoanhThu.TabIndex = 4;
-            this.btDoanhThu.Text = "Doanh thu";
+            this.btDoanhThu.Text = "Thống kê";
             this.btDoanhThu.UseVisualStyleBackColor = false;
             this.btDoanhThu.Click += new System.EventHandler(this.btDoanhThu_Click);
             // 
@@ -115,7 +115,7 @@
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "fQuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý nhà hàng";
+            this.Text = "Trang chủ";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

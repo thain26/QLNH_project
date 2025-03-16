@@ -59,7 +59,13 @@ namespace Quanlynhahang.DAL
         // truy xuất danh sách hóa đơn
         public DataTable GetListHoaDon(DateTime ngayVao, DateTime ngayRa)
         {
-            string query = "select Ma as N'Mã hóa đơn', MaBan as N'Số bàn', NgayVao as N'Ngày vào', NgayRa as N'Ngày ra', TongTien as N'Tổng tiền' from HoaDon where NgayVao >= '" + ngayVao + "' and NgayRa <= '" + ngayRa + "'";
+            string query = "select Ma as N'Mã hóa đơn', MaBan as N'Số bàn', NgayRa as N'Ngày', TongTien as N'Tổng tiền' from HoaDon where NgayVao >= '" + ngayVao + "' and NgayRa <= '" + ngayRa + "'";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable GetListDoanhThu(DateTime thangDau, DateTime thangCuoi)
+        {
+            string query = "select Ma as N'Mã hóa đơn', MaBan as N'Số bàn', NgayRa as N'Ngày', TongTien as N'Tổng tiền' from HoaDon where NgayVao >= '" + thangDau + "' and NgayRa <= '" + thangCuoi + "'";
             return DataProvider.Instance.ExecuteQuery(query);
         }
     }

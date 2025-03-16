@@ -26,7 +26,7 @@ namespace Quanlynhahang
 
         private void btThongKe_Click(object sender, EventArgs e)
         {
-            ucDoanhThu uctrl = new ucDoanhThu();
+            ucThongKe uctrl = new ucThongKe();
             pnShow.Controls.Clear();
             pnShow.Controls.Add(uctrl);
         }

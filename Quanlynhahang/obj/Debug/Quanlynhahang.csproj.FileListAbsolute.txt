@@ -13,5 +13,5 @@ D:\learn\window\Quanlynhahang\Quanlynhahang\obj\Debug\Quanlynhahang.fNhanVien.re
 D:\learn\window\Quanlynhahang\Quanlynhahang\obj\Debug\Quanlynhahang.ucQuanLyBan.resources
 D:\learn\window\Quanlynhahang\Quanlynhahang\obj\Debug\Quanlynhahang.ucQuanLyNhanVien.resources
 D:\learn\window\Quanlynhahang\Quanlynhahang\obj\Debug\Quanlynhahang.ucMonAn.resources
-D:\learn\window\Quanlynhahang\Quanlynhahang\obj\Debug\Quanlynhahang.ucDoanhThu.resources
 D:\learn\window\Quanlynhahang\Quanlynhahang\obj\Debug\Quanlynhahang.fGioHang.resources
+D:\learn\window\Quanlynhahang\Quanlynhahang\obj\Debug\Quanlynhahang.ucThongKe.resources

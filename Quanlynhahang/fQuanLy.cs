@@ -40,7 +40,7 @@ namespace Quanlynhahang
 
         private void btDoanhThu_Click(object sender, EventArgs e)
         {
-            ucDoanhThu uctrl = new ucDoanhThu();
+            ucThongKe uctrl = new ucThongKe();
             pnShow.Controls.Clear();
             pnShow.Controls.Add(uctrl);
         }

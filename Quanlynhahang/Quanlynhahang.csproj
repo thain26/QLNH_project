@@ -93,11 +93,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ucDoanhThu.cs">
+    <Compile Include="ucThongKe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucDoanhThu.Designer.cs">
-      <DependentUpon>ucDoanhThu.cs</DependentUpon>
+    <Compile Include="ucThongKe.Designer.cs">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="ucMonAn.cs">
       <SubType>UserControl</SubType>
@@ -134,8 +134,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucDoanhThu.resx">
-      <DependentUpon>ucDoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="ucThongKe.resx">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ucMonAn.resx">
       <DependentUpon>ucMonAn.cs</DependentUpon>
