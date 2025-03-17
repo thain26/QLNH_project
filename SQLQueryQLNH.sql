@@ -27,13 +27,13 @@ select * from TaiKhoan
 
 create table NhanVien
 (
-	Ma varchar(10) primary key not null,
+	Ma varchar(10) identity primary key not null,
 	CCCD varchar(100) not null,
 	Ten nvarchar(100) not null,
 	NgaySinh date not null,
 	GioiTinh nvarchar(100) not null,
 	SDT varchar(100) not null,
-	Luong money not null
+	--Luong money not null
 
 )
 go
@@ -64,7 +64,7 @@ Go
 
 create table HoaDon
 (
-	Ma int primary key not null,
+	Ma int identity primary key not null,
 	MaBan int not null foreign key references BanAn(Ma),
 	NgayVao date not null,
 	NgayRa date,
@@ -98,10 +98,6 @@ create table LichLam
 )
 
 --insert into NhanVien( 
-
-insert into TaiKhoan( tenDangNhap, matKhau, loaiTaiKhoan) values (N'quanly', N'1', 1)
-insert into TaiKhoan( tenDangNhap, matKhau, loaiTaiKhoan) values (N'nhanvien', N'1', 0)
-
 
 create proc TimNhanVien
 @ten nvarchar(100)
@@ -198,20 +194,8 @@ begin
 end
 go
 
-select * from DanhMuc
-select * from MonAn
-
-delete MonAn where Ten = N
-select * from NhanVien
-select * from TaiKhoan
-remove table NhanVien
-
-select * from HoaDon
 
 insert into HoaDon(Ma, MaBan, NgayVao, NgayRa, TrangThai,TongTien) values(1, 2, '2023-01-11', '2023-01-11', 1, 100000)
 insert into HoaDon(Ma, MaBan, NgayVao, NgayRa, TrangThai,TongTien) values(2, 2, '2024-01-16', '2024-01-11', 1, 200000)
-delete HoaDon where Ma = 2
 
-select  Sum(TongTien) as N'Doanh Thu' from HoaDon where month(NgayRa) = 1  and year(NgayRa) = 2023
-
-select EOMONTH(NgayVao,-1) from HoaDon
+ 
